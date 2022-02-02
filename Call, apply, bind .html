@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Teacher(name,subject) {
+    this.name=name;
+    this.subject=subject;
+}
+function Person1(n,sub){
+    Teacher.call(this,n,sub);
+}
+function Person2(n,sub){
+    Teacher.apply(this,[n,sub]);
+}
+function Person3(n,sub){
+    let hold=Teacher.bind(this,n,sub);
+    hold();
+}
+let p1 =new Person1("abc","def");
+console.log(p1);
+let p2 =new Person2("p2","def");
+console.log(p2);
+let p3 =new Person3("p3","def");
+console.log(p3);
+</script>
+<script src=""></script>
